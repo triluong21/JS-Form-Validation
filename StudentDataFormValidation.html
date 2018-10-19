@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>JavaScript Form Validation</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/javascript" media="screen" href="StudentDataFormValidation.html" />
+  <script type="text/javascript">
+    function check_info() {
+      var enrollmentid = document.getElementById('enrollmentid').value;
+      var fullname = document.getElementById('fullname').value;
+      var male_yes = document.getElementById('male_yes').value;
+      var male_no = document.getElementById('male_no').value;
+      var emailaddress = document.getElementById('emailaddress').value;
+      var birthcity = document.getElementById('birthcity').value;
+      var birthcountry = document.getElementById('birthcountry').value;
+
+
+      if (enrollmentid == "") {
+        alert('Please fill in your Enrollment ID');
+        document.getElementById('enrollmentid').style.borderColor = "green";
+        return false;
+      } else if (fullname == "") {
+        alert('Please fill in your full name');
+        document.getElementById('fullname').style.borderColor = "green";
+        return false;
+      } else if (!document.getElementById('male_yes').checked && !document.getElementById('male_no').checked) {
+        alert('Please mark your gender');
+        document.getElementById('male_yes').style.borderRadius = "green";
+        return false;
+      } else if (emailaddress == "") {
+        alert('Please fill in your email address');
+        document.getElementById('emailaddress').style.borderColor = "green";
+        return false;
+      } else if (birthcity == "") {
+        alert('Please fill in your birth city');
+        document.getElementById('birthcity').style.borderColor = "green";
+        return false;
+      } else if (birthcountry == "") {
+        alert('Please fill in your birth country');
+        document.getElementById('birthcountry').style.borderColor = "green";
+        return false;
+      }
+      else {
+        return true;
+      }
+    }
+
+  </script>
+  <style>
+    h1 {
+      color: red;
+    }
+  </style>
+</head>
+
+<body>
+  <center>
+    <h1>
+      <b>Student Data Form</b>
+    </h1>
+    <fieldset>
+      <form action="submission.html" method="post" onsubmit="return check_info()">
+        <table>
+          <tr>
+            <td>
+              <lable>Enrollment ID </lable>
+            </td>
+            <td>
+              <input type="text" name="enrollmentid" id="enrollmentid" />
+            </td>
+            <br/>
+            <tr>
+              <td>
+                <lable>Full Name </lable>
+              </td>
+              <td>
+                <input type="text" name="fullname" id="fullname" />
+              </td>
+              <br/>
+            </tr>
+            <tr>
+              <td>
+                <label>Male</label>
+                <input type="radio" name="gender" value="yes" id="male_yes" />
+                <label>Female</label>
+                <td>
+                  <input type="radio" name="gender" value="no" id="male_no" />
+                </td>
+                <br/>
+            </tr>
+            <tr>
+              <td>
+                <lable align="right">Email Address </lable>
+              </td>
+              <td>
+                <input type="text" name="emailaddress" id="emailaddress" />
+              </td>
+              <br/>
+            </tr>
+            <tr>
+              <td>
+                <lable colo>Birth City </lable>
+              </td>
+              <td>
+                <input type="text" name="birthcity" id="birthcity" />
+              </td>
+              <br/>
+            </tr>
+            <tr>
+              <td>
+                <lable colo>Birth Country </lable>
+              </td>
+              <td>
+                <input type="text" name="birthcountry" id="birthcountry" />
+              </td>
+              <br/>
+            </tr>
+            <br/>
+            <tr>
+              <td>
+                <input type="submit" value="Submit" />
+              </td>
+              <br/>
+            </tr>
+        </table>
+      </form>
+    </fieldset>
+  </center>
+</body>
+
+</html>
